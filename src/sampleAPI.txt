@@ -1,0 +1,19 @@
+{
+      "ID": 20,
+      "Title": "Maecenas a felis in turpis",
+      "Category": "Party",
+      "BannerUrl": "https://picsum.photos/640/480",
+      "Description": "",
+      "AddressLine1": "4 O'Reilly Quay",
+      "AddressLine2": "",
+      "PostCode": 8844,
+      "City": "Janisston",
+      "Country": "New Zealand",
+      "EventStartDate": "2025-11-05T15:45:00Z",
+      "EventEndDate": "2025-11-05T16:15:00Z",
+      "FullDayEvent": "FALSE",
+      "Author": "Ara Gibson",
+      "Editor": "Ara Gibson",
+      "Created": "2025-07-24T11:16:52Z",
+      "Modified": "2025-07-24T11:16:52Z"
+    }

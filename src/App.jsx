@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Suspense, lazy } from "react";
+import { CalendarProvider } from "./context/CalendarContext";
 
-function App() {
-  const [count, setCount] = useState(0)
+const CalendarModule = lazy(() => import("./components/CalendarModule"));
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // Wrap in Context Provider to share state across components
+    <CalendarProvider>
+      <div className="text-center my-6 flex flex-col items-center"></div>
+      {/* fallback UI until lazy component is loaded */}
+      <Suspense
+        fallback={
+          <div className="text-center text-2xl text-gray-600 mt-20">
+            Loading your meetings...
+          </div>
+        }
+      >
+        <CalendarModule />
+      </Suspense>
+    </CalendarProvider>
+  );
 }
-
-export default App

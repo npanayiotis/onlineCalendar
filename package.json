@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "office-ui-fabric-react": "^7.204.1",
+    "@tailwindcss/vite": "^4.1.13",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

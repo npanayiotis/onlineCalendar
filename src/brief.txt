@@ -1,0 +1,38 @@
+****** ----- Briefing approaching the tasks ----- ******
+
+
+ReactJS v17.0.1
+The project uses React 17.0.1 as specified in package.json.
+
+The module is implemented in JavaScript (see all files in src/), but could be migrated to TypeScript if needed.
+
+Sample Data API (POST request)
+The API URL is loaded from .env and a POST request is made in useCalendarEvents to fetch events.
+
+Adobe XD Design Guideline
+The UI in CalendarModule, EventCard, and EventModal is styled to match the design, using TailwindCSS
+
+Friendly Date/Time Display
+Friendly date formatting is handled by friendlyDateString, though EventCard currently implements its own logic. You may want to refactor to use the utility everywhere.
+
+Using TailwindCSS for stylings
+
+Scrollable Description Box
+The description in EventModal is in a scrollable area with a custom scrollbar class (custom-scrollbar). You can further style this in CSS.
+
+Download Event as .ICS
+ICS file generation and download is handled by useICSExporter, triggered from the modal's "Add to calendar" button.
+
+Default Values for Dynamic Properties
+Default values are used throughout the code, e.g., in ICS generation, modal rendering, and event cards.
+
+Referenced symbols and files:
+
+useCalendarEvents
+friendlyDateString
+CalendarModule
+EventCard
+EventModal
+useICSExporter
+package.json
+.env
