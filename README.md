@@ -1,12 +1,48 @@
-# React + Vite
+# BSM Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React calendar demo built with Vite and TailwindCSS.  
+Displays upcoming events, allows viewing details in a modal, and lets users download events as ICS files.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Event List:** Shows upcoming events with title, date, location, and description.
+- **Event Details Modal:** Click an event to view full details in a modal dialog.
+- **ICS Download:** Download any event as a `.ics` calendar file.
+- **Event Data:** Fetches events from an API (configured in .env).
+- **Responsive UI:** Styled with TailwindCSS.
+- **Performance Optimizations:** Efficient rendering and state management for smooth user experience.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/components/CalendarModule.jsx` — Main calendar UI and modal logic.
+- `src/components/EventCard.jsx` — Displays individual event cards.
+- `src/components/EventModal.jsx` — Modal for event details (styled with TailwindCSS).
+- `src/hooks/useCalendarEvents.js` — Fetches calendar events.
+- `src/hooks/useEventSelection.js` — Handles event selection and modal state.
+- `src/hooks/useICSExporter.js` — Generates and downloads ICS files.
+- `src/context/CalendarContext.jsx` — Global state for events and selection.
+- `src/utils/dateUtils.js` — Date formatting utilities.
+- `src/App.jsx` — Loads the calendar module with context.
+- `vite.config.js` — Vite configuration for React and TailwindCSS.
+
+## How It Works
+
+1. **Events are loaded** (fetched from API) and shown as cards.
+2. **Click an event** to open a modal with details.
+3. **Download ICS:** In the modal, click "Add to calendar" to save the event to your calendar.
+4. **Close modal:** Click "✕" or outside the modal to return to the event list.
+
+## Getting Started
+
+```sh
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Dependencies
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
