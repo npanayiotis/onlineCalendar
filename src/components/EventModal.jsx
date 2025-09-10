@@ -98,9 +98,9 @@ export default function EventModal({ selected, onClose, onDownload }) {
                     Add to calendar
                   </button>
                 </div>
-                <div className="mb-4 text-xs text-gray-700">
-                  <span className="font-semibold">LOCATION</span>
-                  <div className="text-sm">
+                <div className="text-xs text-gray-700 mb-2">
+                  <span className="font-semibold ">LOCATION</span>
+                  <div className="text-sm gap-1.5">
                     {selected.AddressLine1 || ""}
                     <br />
                     {selected.City || ""}
