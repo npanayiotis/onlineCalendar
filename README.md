@@ -1,4 +1,4 @@
-# BSM Calendar
+# Online Calendar
 
 A simple React calendar demo built with Vite and TailwindCSS.  
 Displays upcoming events, allows viewing details in a modal, and lets users download events as ICS files.
