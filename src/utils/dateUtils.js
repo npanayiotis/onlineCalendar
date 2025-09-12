@@ -21,6 +21,7 @@ export function friendlyDateString(dateISO) {
     For future dates (diffSec > 0), it uses "in X days/hours/minutes" or "in a few seconds".
     For past dates, it uses "X days/hours/minutes ago" or "just now". 
   */
+
   if (absDays < 7) {
     if (diffSec > 0) {
       if (absDays >= 1) return `in ${absDays} day${absDays > 1 ? "s" : ""}`;
@@ -49,8 +50,6 @@ export function friendlyDateString(dateISO) {
 
   /*
     If the date is more than 7 days away (past or future), show the full date
-    This block formats the date as DD/MM/YYYY for dates outside the 7-day relative window.
-    It pads the day and month with a leading zero if needed, and returns the formatted string.
   */
   const day = String(d.getDate()).padStart(2, "0");
   const month = String(d.getMonth() + 1).padStart(2, "0");

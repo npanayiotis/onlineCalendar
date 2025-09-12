@@ -23,9 +23,7 @@ export default function EventModal({ selected, onClose, onDownload }) {
           </button>
 
           <div className="flex flex-col">
-            {/* Top section: Banner + Event Info */}
             <div className="flex w-full">
-              {/* Banner image */}
               <div className="flex-1 bg-gray-100 rounded-tl-lg overflow-hidden">
                 {selected.BannerUrl ? (
                   <img

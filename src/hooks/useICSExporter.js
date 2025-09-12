@@ -72,7 +72,7 @@ export const useICSExporter = () => {
     const a = document.createElement("a");
     a.href = url;
     a.download = `${(event.title || "event").replace(/\s+/g, "_")}.ics`;
-    // Programmatically click the anchor to trigger the download
+    // Anchor click to trigger the download
     a.click();
     // Clean up the temporary URL object after download to free resources
     URL.revokeObjectURL(url);
