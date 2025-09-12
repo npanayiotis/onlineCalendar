@@ -2,34 +2,33 @@ import React, { useMemo, useCallback } from "react";
 import EventCard from "./EventCard";
 import EventModal from "./EventModal";
 
+// naming export of custom hooks
 import { useCalendarEvents } from "../hooks/useCalendarEvents";
 import { useEventSelection } from "../hooks/useEventSelection";
 import { useICSExporter } from "../hooks/useICSExporter";
 
 export default function CalendarModule() {
-  // Destructure state and actions from custom hooks
+  // Using custom hooks to manage state and logic
   const { events, error } = useCalendarEvents();
   const { selected, openEvent, closeEvent } = useEventSelection();
   const { downloadEventICS } = useICSExporter();
 
   // Render event cards
-  // Checking if events is an array to avoid runtime errors and using useMemo for performance optimization
   const eventCards = useMemo(() => {
     if (!Array.isArray(events)) return null;
     return events.map((event) => (
-      // Displaying event cards
+      // mapping  over events to create EventCard components
       <EventCard key={event.ID} event={event} onClick={openEvent} />
     ));
   }, [events, openEvent]);
 
-  // handlers for modal actions with useCallback for performance optimization
+  // Handlers for modal, passing them as callbacks to avoid unnecessary re-renders
   const handleClose = useCallback(() => closeEvent(), [closeEvent]);
   const handleDownload = useCallback(
     () => downloadEventICS(selected),
     [downloadEventICS, selected]
   );
 
-  // showing error state as fallback
   if (error) {
     return (
       <div className="p-4 text-red-500 flex flex-col items-center text-2xl">
@@ -47,7 +46,8 @@ export default function CalendarModule() {
         </h2>
         <div className="flex flex-col gap-2">{eventCards}</div>
       </div>
-      {/* Rendering selected event Modal, passing required props to EventModal component */}
+
+      {/* Modal */}
       <EventModal
         selected={selected}
         onClose={handleClose}

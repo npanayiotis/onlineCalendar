@@ -1,13 +1,11 @@
 import React, { Suspense, lazy } from "react";
-import { CalendarProvider } from "./context/CalendarContext";
 
+// creating the lazy component for performance optimization
 const CalendarModule = lazy(() => import("./components/CalendarModule"));
 
 export default function App() {
   return (
-    // Wrap in Context Provider to share state across components
-    <CalendarProvider>
-      <div className="text-center my-6 flex flex-col items-center"></div>
+    <div className="text-center my-6 flex flex-col items-center">
       {/* fallback UI until lazy component is loaded */}
       <Suspense
         fallback={
@@ -18,6 +16,6 @@ export default function App() {
       >
         <CalendarModule />
       </Suspense>
-    </CalendarProvider>
+    </div>
   );
 }

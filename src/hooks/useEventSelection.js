@@ -1,15 +1,12 @@
-import { useContext } from "react";
-import { CalendarContext } from "../context/CalendarContext";
+import { useState } from "react";
 
-export const useEventSelection = () => {
-  const { selected, setSelected } = useContext(CalendarContext);
+export function useEventSelection() {
+  const [selected, setSelected] = useState(null);
 
-  /*
-    Functions to open and close the event details modal, 
-    onClick of event card setting the selected event to state 
-  */
+  // Functions to open and close event details
+
   const openEvent = (event) => setSelected(event);
   const closeEvent = () => setSelected(null);
 
   return { selected, openEvent, closeEvent };
-};
+}

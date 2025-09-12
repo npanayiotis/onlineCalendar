@@ -29,12 +29,12 @@ export function useCalendarEvents() {
         });
 
         const data = await resp.json();
-        const evts = Array.isArray(data.value) ? data.value : [];
+        const fetchedEvents = Array.isArray(data.value) ? data.value : [];
 
         if (mounted) {
           // Only update if there are new events
           const currentIds = events.map((event) => event.ID);
-          const newEvents = evts.filter(
+          const newEvents = fetchedEvents.filter(
             (event) => !currentIds.includes(event.ID)
           );
 
@@ -60,6 +60,7 @@ export function useCalendarEvents() {
     return () => {
       mounted = false;
     };
+    // dependency array includes events to ensure we check for new events whenever events state changes
   }, [API_URL, events]);
 
   return { events, loading, error };

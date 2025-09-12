@@ -6,7 +6,6 @@ export default function EventCard({ event, onClick }) {
   const dateText = friendlyDateString(event.EventStartDate);
 
   return (
-    // Event card container
     <div
       className="group bg-[#F3F2F1] hover:bg-[#E9E7E9] px-4 py-2 rounded cursor-pointer transition-colors"
       onClick={() => onClick(event)}

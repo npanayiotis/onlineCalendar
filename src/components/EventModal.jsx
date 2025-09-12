@@ -6,7 +6,7 @@ export default function EventModal({ selected, onClose, onDownload }) {
   return (
     <>
       <div
-        className="fixed inset-0 bg-gray-300 bg-opacity-50 z-[9998]"
+        className="fixed inset-0 bg-gray-300 bg-opacity-100 z-[9998]"
         onClick={onClose}
       />
 

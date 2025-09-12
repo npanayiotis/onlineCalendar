@@ -1,3 +1,8 @@
+/*
+  generateICS(event) creates the ICS file content as a string.
+  downloadEventICS(event) creates a Blob from that string, generates a temporary URL, and programmatically downloads the file as <event-title>.ics.
+*/
+
 export const useICSExporter = () => {
   const generateICS = (event) => {
     /* 
@@ -37,6 +42,7 @@ export const useICSExporter = () => {
     const now = toICSDate(new Date());
 
     // Construct ICS content as an array of lines, then join with CRLF
+    // ICS is a text-based format that requires specific line endings
     return [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
