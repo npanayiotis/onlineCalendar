@@ -20,7 +20,6 @@ Displays upcoming events, allows viewing details in a modal, and lets users down
 - `src/hooks/useCalendarEvents.js` — Fetches calendar events.
 - `src/hooks/useEventSelection.js` — Handles event selection and modal state.
 - `src/hooks/useICSExporter.js` — Generates and downloads ICS files.
-- `src/context/CalendarContext.jsx` — Global state for events and selection.
 - `src/utils/dateUtils.js` — Date formatting utilities.
 - `src/App.jsx` — Loads the calendar module with context.
 - `vite.config.js` — Vite configuration for React and TailwindCSS.
